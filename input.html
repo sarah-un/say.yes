@@ -1,0 +1,35 @@
+<?php
+  if(isset($_GET['btn-save'])){
+  $filename = "file.txt";
+  $text = $_GET['phrase_01'] . " " . $_GET['phrase_02'];
+  file_put_contents($filename, $text, FILE_APPEND);
+  $text = urldecode($text);
+    echo $_GET['phrase1'];
+  }
+?>
+
+<html>
+<head>
+</head>
+<body>
+<h1>I say YES! to ...</h1>
+  <form method="get">
+    <select class="custom-select" name="phrase_01">
+           <option selected>Open this select menu</option>
+           <option value="learning">learning</option>
+           <option value="exploring">exploring</option>
+           <option value="finding">finding</option>
+           <option value="enjoying">enjoying</option>
+           <option value="smiling">smiling</option>
+           <option value="eating">eating</option>
+    </select>
+  <br><br>
+    First name:<br>
+    <input type="text" name="firstname"><br>
+    Last name:<br>
+    <input type="text" name="lastname">
+    <button type="submit" class="btn btn-default" name="btn-save" value="1">Say YES!</button>
+  </form>
+
+</body>
+</html>
